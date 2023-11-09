@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout Source') {
       steps {
-        git ''
+        git 'https://github.com/shreegs123/Capstone_Project_repo.git'
       }
     }
     stage('Build') {
