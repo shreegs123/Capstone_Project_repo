@@ -6,7 +6,7 @@ pipeline {
         git 'https://github.com/shreegs123/Capstone_Project_repo.git'
       }
     }
-    stage('Build') {
+    /*stage('Build') {
       steps {
         sh 'docker build -t caps-img .'
       }
@@ -16,7 +16,7 @@ pipeline {
         sh 'docker-compose down || true'
         sh 'docker-compose up -d'
       }
-    }
+    }*/
 }
 }
 
