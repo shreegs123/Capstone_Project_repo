@@ -1,7 +1,11 @@
 pipeline {
   agent any
   stages {
-    stages {
+    stage('Checkout Source') {
+      steps {
+        git ''
+      }
+    }
     stage('Build') {
       steps {
         sh 'docker build -t caps-img .'
