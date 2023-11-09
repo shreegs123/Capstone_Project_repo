@@ -9,14 +9,14 @@ pipeline {
     stage('Build image') {
       steps{
         script {
-          sh './build.sh
+          sh './build.sh'
         }
       }
     }
    stage('deploy') {
       steps{
         script {
-          sh './deploy.sh
+          sh './deploy.sh'
         }
       }
     }
