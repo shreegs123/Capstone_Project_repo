@@ -1,25 +1,18 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout Source') {
+    stages {
+    stage('Build') {
       steps {
-        git 'https://github.com/shreegs123/Capstone_Project_repo.git'
+        sh 'docker build -t caps-img .'
       }
     }
-    stage('Build image') {
-      steps{
-        script {
-          sh 'docker 
-        }
+    stage('Test') {
+      steps {
+        sh 'docker-compose down || true'
+        sh 'docker-compose up -d'
       }
     }
-   stage('deploy') {
-      steps{
-        script {
-          sh './deploy.sh'
-        }
-      }
-    } 
 }
 }
 
