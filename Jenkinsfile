@@ -13,13 +13,13 @@ pipeline {
         }
       }
     }
-   stage('deploy') {
+   /*stage('deploy') {
       steps{
         script {
           sh './deploy.sh'
         }
       }
-    }
+    } */
 }
 }
 
