@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [[ $(git branch --contains) == *main* ]]; then
+if [[$GIT_BRANCH == origin/main]]; then
   echo "Found a main"
-elif [[ $(git branch --contains) == *dev* ]]; then
+elif [[$GIT_BRANCH == origin/dev]]; then
   echo "Found a dev"
 else
   echo "fail"	
