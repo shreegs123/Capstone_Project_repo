@@ -1,10 +1,11 @@
 #!/bin/bash
+if [[ $GIT_BRANCH == origin/main ]]; then
+        echo "commit to main branch"
+	sh ./build.sh
 
-if [[$GIT_BRANCH == origin/main]]; then
-  echo "Found a main"
-elif [[$GIT_BRANCH == origin/dev]]; then
-  echo "Found a dev"
-else
-  echo "fail"	
+else [[ $GIT_BRANCH == origin/dev ]]
+        echo "commit to dev branch"
+	sh ./build.sh
+
 fi
   
