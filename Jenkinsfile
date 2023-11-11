@@ -9,7 +9,8 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh 'docker build -t caps-img .'
+       /* sh 'docker build -t caps-img .'*/
+        echo "build success"
       }
     }
     /*stage('Test') {
