@@ -8,3 +8,5 @@ elif [[$GIT_BRANCH == origin/dev]]
         
 else    
         echo "deployfailed"
+
+fi
