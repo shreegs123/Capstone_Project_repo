@@ -1,8 +1,10 @@
 #!/bin/bash
 
-if [[$GIT_BRANCH == origin/main]]; then
-        echo "commit to main branch"
-
-else [[$GIT_BRANCH == origin/dev]]
-        echo "commit to dev branch"
+if [[ $(git branch --contains) == *main* ]]; then
+  echo "Found a main"
+elif [[ $(git branch --contains) == *dev* ]]; then
+  echo "Found a dev"
+else
+  echo "fail"	
 fi
+  
