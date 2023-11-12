@@ -8,9 +8,20 @@ pipeline {
     }
     stage('checkout branch') {
       steps {
-          script {
-            shortCommit = sh'(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()'
+        script {
+          Map scmVars = checkout([/* Some checkout paramaters */])
+          // Setting up GIT_* env variables manually
+          scmVars.each { k, v ->
+            env[k] = v
           }
+        }
+      }
+    }
+    stage('Print GIT env variables'){
+      steps {
+        sh 'env | grep GIT_'
+      }
+    }
       }
     }
     /*stage('Build') {
