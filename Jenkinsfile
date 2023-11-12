@@ -12,9 +12,7 @@ pipeline {
     stage('Configure') {
       steps {
         script {    
-          sh 'git rev-parse --abbrev-ref HEAD | grep -v HEAD'
-          sh 'git describe --exact-match HEAD 2> /dev/null'
-          sh 'git rev-parse HEAD'
+          sh 'git symbolic-ref --short HEAD'
         
         }
       }
