@@ -9,7 +9,7 @@ pipeline {
     stage ('test') {
       steps {
       script {
-      sh 'git symbolic-ref --short HEAD'
+      sh 'git branch --show-current'
     }
       }
     }
