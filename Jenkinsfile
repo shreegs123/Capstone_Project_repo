@@ -12,7 +12,7 @@ pipeline {
     stage('Configure') {
       steps {
         script {    
-          sh 'git branch --show-current'
+          sh'git symbolic-ref HEAD | sed -e "s/^refs\/heads\///"'
         }
       }
     }
