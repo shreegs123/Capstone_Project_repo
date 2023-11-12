@@ -10,16 +10,17 @@ pipeline {
       steps {
           script {
             def scmVars = checkout scm
+            echo 'scmVars'
             echo 'scm : the commit branch  is ' +scmVars.GIT_BRANCH
           }
       }
     }
-    stage('Build') {
+    /*stage('Build') {
       steps {
         echo "building phase"
         sh 'bash build.sh'
       }
-    }
+    }*/
 }
 }
 
