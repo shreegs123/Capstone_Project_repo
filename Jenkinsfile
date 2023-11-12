@@ -12,7 +12,11 @@ pipeline {
     stage('Configure') {
       steps {
         script {    
-          sh'git symbolic-ref HEAD | sed -e "s/^refs\/heads\///"'
+          sh'get_branch () {
+          git rev-parse --abbrev-ref HEAD | grep -v HEAD || \
+          git describe --exact-match HEAD 2> /dev/null || \
+          git rev-parse HEAD
+        }'
         }
       }
     }
