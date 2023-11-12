@@ -13,7 +13,7 @@ pipeline {
                     checkout scm
 
                     // Print the GIT_BRANCH to the console
-                    echo "Current branch: ${env.GIT_BRANCH}"
+                    echo "Current branch: ${GIT_BRANCH}"
                 }
             }
         }
