@@ -12,11 +12,10 @@ pipeline {
     stage('Configure') {
       steps {
         script {    
-          sh'get_branch () {
-          git rev-parse --abbrev-ref HEAD | grep -v HEAD || \
-          git describe --exact-match HEAD 2> /dev/null || \
-          git rev-parse HEAD
-        }'
+          sh 'git rev-parse --abbrev-ref HEAD | grep -v HEAD'
+          sh 'git describe --exact-match HEAD 2> /dev/null'
+          sh 'git rev-parse HEAD'
+        
         }
       }
     }
