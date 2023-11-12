@@ -7,9 +7,11 @@ pipeline {
       }
     }
     stage ('test') {
+      steps {
       script {
       sh 'git symbolic-ref --short HEAD'
     }
+      }
     }
     /*stage('Build') {
       steps {
