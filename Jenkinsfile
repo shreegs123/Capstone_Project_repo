@@ -12,8 +12,7 @@ pipeline {
     stage('Configure') {
       steps {
         script {    
-          GIT_COMMIT_REV = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
-          echo " message --->$GIT_COMMIT_REV"
+          sh 'git rev-parse --abbrev-ref HEAD'
         }
       }
     }
