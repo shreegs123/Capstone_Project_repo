@@ -3,9 +3,12 @@ if [[ $GIT_BRANCH == origin/main ]]; then
         echo "commit to main branch"
 	sh ./build.sh
 
-else [[ $GIT_BRANCH == origin/dev ]]
+elif [[ $GIT_BRANCH == origin/dev ]]; then
         echo "commit to dev branch"
 	sh ./build.sh
+
+else 
+	echo "fail"
 
 fi
   
