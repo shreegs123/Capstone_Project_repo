@@ -6,13 +6,17 @@ pipeline {
         checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/shreegs123/Capstone_Project_repo.git']])
       }
     }
-    stage ('test') {
-      steps {
-      script {
-      sh 'git branch --show-current'
-    }
-      }
-    }
+    stage('Checkout branch') {
+            steps {
+                script {
+                    // Checkout the code
+                    checkout scm
+
+                    // Print the GIT_BRANCH to the console
+                    echo "Current branch: ${env.GIT_BRANCH}"
+                }
+            }
+        }
     /*stage('Build') {
       steps {
         echo "building phase."
