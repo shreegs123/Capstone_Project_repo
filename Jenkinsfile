@@ -10,7 +10,6 @@ pipeline {
       steps {
         script {
           Map scmVars = checkout([/* Some checkout paramaters */])
-          // Setting up GIT_* env variables manually
           scmVars.each { k, v ->
             env[k] = v
           }
@@ -22,8 +21,8 @@ pipeline {
         sh 'env | grep GIT_'
       }
     }
-      }
-    }
+      
+    
     /*stage('Build') {
       steps {
         echo "building phase"
