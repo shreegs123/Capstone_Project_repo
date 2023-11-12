@@ -9,9 +9,7 @@ pipeline {
     stage('checkout branch') {
       steps {
           script {
-            def scmVars = checkout scm
-            echo '$(scmVars)'
-            echo 'scm : the commit branch  is ' +scmVars.GIT_BRANCH
+            shortCommit = sh'(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()'
           }
       }
     }
