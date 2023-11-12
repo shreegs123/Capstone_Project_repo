@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  environment {
-    GIT_COMMIT_REV=''
-  }
   stages {
     stage('Checkout Source') {
       steps {
