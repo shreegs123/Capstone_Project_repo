@@ -3,26 +3,25 @@ pipeline {
   stages {
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/shreegs123/Capstone_Project_repo.git'
+        checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/shreegs123/Capstone_Project_repo.git']])
       }
     }
-    stage('Build image') {
-      steps{
-        script {
-          sh './build.sh'
+    stage('Configure') {
+      steps {
+        script {    
+          sh 'git symbolic-ref --short HEAD'
+        
         }
       }
     }
-<<<<<<< HEAD
-=======
-   stage('deploy') {
-      steps{
-        script {
-          sh './deploy.sh'
-        }
+
+    
+    /*stage('Build') {
+      steps {
+        echo "building phase"
+        sh 'bash build.sh'
       }
-    }
->>>>>>> main
+    }*/
 }
 }
 
