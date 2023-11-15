@@ -1,19 +1,4 @@
 #!/bin/bash
-<<<<<<< HEAD
-if [[ $GIT_BRANCH == origin/main ]]; then
-        echo "commit to main branch"
-	sh ./build.sh
-
-elif [[ $GIT_BRANCH == origin/dev ]]; then
-        echo "commit to dev branch"
-	sh ./build.sh
-
-else 
-	echo "fail"
-
-fi
-  
-=======
 
 dev_docker_pub_repo="manjushreegs/dev"
 prod_docker_pri_repo="manjushreegs/prod"
@@ -35,4 +20,3 @@ else
     echo "Unsupported branch: $GIT_BRANCH. Exiting."
     exit 1
 fi
->>>>>>> dev
