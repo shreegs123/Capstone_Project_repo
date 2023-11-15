@@ -8,16 +8,10 @@ pipeline {
     }
     stage('Build') {
       steps {
-        /*sh 'docker build -t caps-img .' */
-        echo "build"
+        echo "building phase"
+        sh 'bash deploy.sh'
       }
     }
-    /*stage('Test') {
-      steps {
-        sh 'docker-compose down || true'
-        sh 'docker-compose up -d'
-      }
-    }*/
 }
 }
 
