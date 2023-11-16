@@ -5,5 +5,9 @@ prod_docker_pri_repo="manjushreegs/prod"
 
 # Get the current Git branch
 GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+<<<<<<< HEAD
 echo "current branch is $GIT_BRANCH"
 
+=======
+echo "$GIT_BRANCH"
+>>>>>>> dev
