@@ -9,7 +9,8 @@ pipeline {
     stage('build') {
       steps {
 	script {
-	   sh 'bash deploy.sh'
+	   sh 'current_branch=$(git symbolic-ref --short -q HEAD)'
+	   sh 'echo "$current branch"
 	}
       }
     }
