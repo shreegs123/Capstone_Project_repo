@@ -10,7 +10,7 @@ pipeline {
       steps {
 	script {
 	   sh 'current_branch=$(git symbolic-ref --short -q HEAD)'
-	   sh 'echo "$current branch"
+	   
 	}
       }
     }
