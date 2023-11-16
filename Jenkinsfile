@@ -9,7 +9,7 @@ pipeline {
     stage('build') {
       steps {
 	script {
-	   sh 'git symbolic-ref --short -q HEAD'
+	   sh 'git for-each-ref --format='%(upstream:short)' "$(git symbolic-ref -q HEAD)"'
 	   
 	}
       }
