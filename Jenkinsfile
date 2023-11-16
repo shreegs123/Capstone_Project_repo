@@ -9,7 +9,7 @@ pipeline {
     stage('build') {
       steps {
 	script {
-	   sh 'current_branch=$(git symbolic-ref --short -q HEAD)'
+	   sh 'git symbolic-ref --short -q HEAD'
 	   
 	}
       }
